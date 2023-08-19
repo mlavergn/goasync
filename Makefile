@@ -17,6 +17,10 @@ mod:
 build:
 	go build main.go
 
+clean:
+	go clean -cache
+	go clean -modcache
+
 test:
 	go test -v -count=1
 

@@ -1,4 +1,4 @@
-module demo
+package demo
 
 go 1.21
 
