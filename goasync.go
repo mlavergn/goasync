@@ -2,8 +2,8 @@ package goasync
 
 import "context"
 
-// Async / Await interface
-type Async interface {
+// Async task interface
+type Task interface {
 	Await() (interface{}, error)
 }
 
@@ -17,8 +17,8 @@ func (any async) Await() (interface{}, error) {
 	return any.await(context.Background())
 }
 
-// Async Task factory
-func Task(any func() (interface{}, error)) Async {
+// Async task factory
+func Async(any func() (interface{}, error)) Task {
 	var result interface{}
 	ch := make(chan struct{})
 	go func() {

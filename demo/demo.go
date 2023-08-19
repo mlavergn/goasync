@@ -2,12 +2,13 @@ package main
 
 import (
 	"fmt"
-	"goasync"
 	"time"
+
+	. "github.com/mlavergn/goasync"
 )
 
-func task() goasync.Async {
-	return goasync.Task(func() (interface{}, error) {
+func task() Task {
+	return Async(func() (interface{}, error) {
 		fmt.Println("async begin")
 		time.Sleep(1 * time.Second)
 		fmt.Println("async end")
